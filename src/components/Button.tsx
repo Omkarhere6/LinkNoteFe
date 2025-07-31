@@ -6,6 +6,7 @@ interface ButtonProps {
   StartIcon?: ReactElement;
   EndIcon?: ReactElement;
   onClick?: () => void;
+  loading?:boolean
 }
 
 const variantValues = {
@@ -20,7 +21,8 @@ export function Button(props: ButtonProps) {
     <>
       <button
         onClick={props.onClick}
-        className={`${variantValues[props.variant]} ${defaultStyles}`}
+        className={`${variantValues[props.variant]} ${defaultStyles} ${props.loading ? "opacity-45" : ""}` }
+        disabled={props.loading}
       >
         <div className="pr-2">{props.StartIcon}</div>
         {props.text}

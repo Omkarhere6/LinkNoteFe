@@ -2,6 +2,7 @@ interface InputProps {
   type: string;
   placeholder?: string;
   value?: string;
+  ref?:any
 }
 
 const defaultStyles =
@@ -10,6 +11,7 @@ const defaultStyles =
 export function Input(props: InputProps) {
   return (
     <input
+      ref={props.ref}
       type={props.type}
       className={defaultStyles}
       placeholder={props.placeholder}

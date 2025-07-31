@@ -1,3 +1,4 @@
+import { CancelIcon } from "../icons/CancelIcon";
 import { ShareIcon } from "../icons/ShareIcon";
 import { Button } from "./Button";
 import { Input } from "./Input";
@@ -12,7 +13,7 @@ export function AddContentModal(props: AddContentModalProps) {
     <>
       <div>
         {props.open && (
-          <div className="w-screen h-screen bg-slate-500 fixed top-0 left-0 opacity-50 flex justify-center">
+          <div className="w-screen h-screen bg-slate-500 fixed top-0 left-0 opacity-90 flex justify-center" >
             <div className="flex items-center justify-center min-h-screen min-w-screen">
               <div className="bg-white rounded-lg p-6 shadow-lg max-w-md w-full">
                 <div className="flex justify-end">
@@ -20,7 +21,7 @@ export function AddContentModal(props: AddContentModalProps) {
                     onClick={props.onClose}
                     className="cursor-pointer text-gray-500 hover:text-gray-700"
                   >
-                    {ShareIcon("size-4")}
+                    <CancelIcon size="size-8"/>
                   </div>
                 </div>
                 <h2 className="text-xl font-semibold mb-4">Add Content</h2>
