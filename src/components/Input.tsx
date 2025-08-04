@@ -6,7 +6,7 @@ interface InputProps {
 }
 
 const defaultStyles =
-  " pt-4 border border-gray-300 rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500";
+  "border border-gray-300 rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500";
 
 export function Input(props: InputProps) {
   return (

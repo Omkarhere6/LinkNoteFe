@@ -1,13 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AddContentModal } from "../components/AddContentModal";
 import { Button } from "../components/Button";
 import { Card } from "../components/Card";
 import { PlusIcon } from "../icons/PlusIcon";
 import { ShareIcon } from "../icons/ShareIcon";
 import { Sidebar } from "../components/Sidebar";
+import { useContent } from "../hooks/useContents";
 
 export function Dashboard() {
   const [modalOpen, setModalOpen] = useState(false);
+  const { contents , refresh } = useContent();
+
+  useEffect(() => {
+    refresh();
+  },[contents]);
 
   return (
     <div>
@@ -37,18 +43,18 @@ export function Dashboard() {
             }}
           ></Button>
         </div>
-        <div className="flex gap-4 pt-6 flex-wrap">
-          <Card
-            type="Youtube"
-            link="https://www.youtube.com/watch?v=knGCfzm4jWs?si=6YYAkhab_Vlmc2Ys"
-            title="watch it"
-          ></Card>
-          <Card
-            type="Twitter"
-            link="https://x.com/arpit_bhayani/status/1950605603250020827"
-            title="read it"
-          ></Card>
-        </div>
+          <div className="flex gap-4 pt-6 flex-wrap">
+              {contents.map(({title,type,link,tags,_id},index) => <Card 
+                type={type}
+                link={link}
+                title={title}
+                tags={tags}
+                contentId={_id}
+                key={index}
+              >
+
+              </Card>)}
+          </div>
         </div>
     </div>
   );

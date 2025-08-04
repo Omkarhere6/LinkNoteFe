@@ -18,7 +18,6 @@ export function SignUp(){
                 username : userName,
                 password : password
         }).then((response) =>{
-            alert(response.data.message)
             navigate("/signin")
         }).catch((error) => {
             alert(error)

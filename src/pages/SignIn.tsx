@@ -16,7 +16,8 @@ export function SignIn(){
                     username : userName,
                     password : password
             }).then((response)=>{
-                alert(response.data.message)
+                const jwt = response.data.token;
+                localStorage.setItem("token", jwt);
                 navigate("/dashboard")
             }).catch((error)=>{
                 alert(error)
