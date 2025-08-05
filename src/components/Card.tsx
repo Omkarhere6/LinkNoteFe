@@ -6,6 +6,7 @@ import { TwitterIcon } from "../icons/TwitterIcon";
 import { YoutubeIcon } from "../icons/YoutubeIcon";
 import { TagsComponent } from "./TagsComponent";
 import { BACKEND_URL } from "../config";
+import { EditIcon } from "../icons/EditIcon";
 
 interface CardProps {
   title: string;
@@ -59,6 +60,7 @@ export function Card(props: CardProps) {
           </div>
           <div className="flex items-center">
             <div className="text-gray-500 pr-2" onClick={() =>{openLinkInNewTab(props.link,props.type)}}><LinkOpenIcon size="size-4"/></div>
+            <div className="text-gray-500 pr-2" ><EditIcon size="size-4"/></div>
             <div className="text-gray-500" onClick={() =>{deleteContent(props.contentId)}}><DeleteIcon size="size-4"/></div>
           </div>
         </div>

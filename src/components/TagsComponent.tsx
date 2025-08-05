@@ -12,7 +12,7 @@ export function TagsComponent(props:TagsComponentProps) {
                           return(<div className="flex text-gray-500 bg-blue-100 p-1 rounded-3xl" key={index}>
                             <TagIcon size="size-6"/>
                             <span>{tag}</span>
-                            {props.showCancelButton && (<div className="pt-1 cursor-pointer hover:text-gray-700 ml-1" onClick={() => {props.onCancelClick?(tag) : null}} >
+                            {props.showCancelButton && (<div className="pt-1 cursor-pointer hover:text-gray-700 ml-1" onClick={() => props.onCancelClick && props.onCancelClick(tag)} >
                                     <CancelIcon size="size-4"/>
                                     </div>
                                 )}
